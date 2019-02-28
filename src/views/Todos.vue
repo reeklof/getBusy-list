@@ -5,7 +5,8 @@
             <p>get things done...</p>
         </header>
         <section class="content">
-            <todo v-for="(todoData, index) in dataToChild" :key="index" :index="index" :todo="todoData"/><!--index visar positionen-->
+            <todo v-for="(todoData, index) in todos" :key="index" :index="index" 
+            :todo="todoData"/>
         </section>
         <footer>
             <a href="#" class="btn" v-touch:swipe.left="swipe">Swipe to add new</a>
@@ -17,10 +18,10 @@
 import todo from '@/components/Todo';
 
 export default {
-    name: "dataToChild",
+    name: "todos",
     computed: {
-        dataToChild() {
-            return this.$store.state.dataToChild;
+        todos() {
+            return this.$store.getters.todos;
         }
     },
     methods: {

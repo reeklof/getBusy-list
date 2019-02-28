@@ -9,17 +9,29 @@ export default new Vuex.Store({
     activeSlide: 0
   },
   mutations: {
-    newTodo(state, todo){
-      state.dataToChild.push(todo);
+    addTodo(state, todos){
+      state.dataToChild.push(todos);
     },
     updateTodo(state, index){
       state.dataToChild[index].done = !state.dataToChild[index].done;
     },
-    swipe(state, activeSlide){
-      state.activeSlide = activeSlide;
+    swipe(state, index){
+      state.activeSlide = index;
     }
   },
   actions: {
-
+    newTodo(ctx, todo) {
+      if (todo.text != ''){
+        ctx.commit('addTodo', todo)
+      } 
+    }
+  },
+  getters: {
+    todos(state) {
+      return state.dataToChild;
+    },
+    finishTodos(state) {
+      return state.dataToChild.filter(todo=>todo.done);
+    }
   }
 })

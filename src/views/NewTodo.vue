@@ -8,7 +8,7 @@
         </section>
         <footer>
             <p>{{ newTodo.length }} / 30 tecken</p>
-            <a href="#" class="btn" v-on:click="addTodo">Add new</a>
+            <a href="#" class="btn" v-on:click="addTodo">Add a new Busy Thing</a>
         </footer>
     </main>
 </template>
@@ -27,7 +27,7 @@ export default {
                 done: false,
                 text: this.newTodo
             }
-            this.$store.commit('newTodo', todo);
+            this.$store.dispatch('newTodo', todo);
             this.newTodo = '';
             this.$store.commit('swipe', 0);
         }
