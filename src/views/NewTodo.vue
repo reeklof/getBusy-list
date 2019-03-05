@@ -21,10 +21,6 @@ export default {
   },
   methods: {
     addTodo() {
-      // let todo = {
-      //   done: false,
-      //   text: this.newTodo
-      // };
       this.$store.dispatch("newTodo", {text: this.newTodo, done: false});
       this.newTodo = "";
       this.$store.commit("swipe", 0);
