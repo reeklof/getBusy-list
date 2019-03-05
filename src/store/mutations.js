@@ -7,5 +7,8 @@ export default {
     },
     swipe(state, activeSlide) {
         state.activeSlide = activeSlide;
+    },
+    setTodos (state, localTodo) {
+        state.dataToChild = localTodo;
     }
 }

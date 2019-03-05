@@ -15,7 +15,7 @@ export default {
     props: ['todo', 'index'],
     methods: {
         completed() {
-            this.$store.commit('updateTodo', this.index);
+            this.$store.dispatch('updateTodo', this.index);
         }
     }
 }

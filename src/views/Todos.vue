@@ -30,6 +30,9 @@ export default {
   },
   components: {
     todo
+  }, 
+  beforeMount() {
+    this.$store.dispatch('getTodos')
   }
 };
 </script>
