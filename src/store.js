@@ -9,24 +9,25 @@ export default new Vuex.Store({
     activeSlide: 0
   },
   mutations: {
-    addTodo(state, todos){
-      state.dataToChild.push(todos);
+    addTodo(state, todo){
+      state.dataToChild.push(todo);
     },
     updateTodo(state, index){
       state.dataToChild[index].done = !state.dataToChild[index].done;
     },
-    swipe(state, index){
-      state.activeSlide = index;
+    swipe(state, activeSlide){
+      state.activeSlide = activeSlide;
     }
   },
-  actions: { // hanterar större mängd data
+  actions: { 
     newTodo(ctx, todo) {
       if (todo.text != ''){
-        ctx.commit('addTodo', todo)
+        ctx.commit('addTodo', todo);
+        ctx.commit('swipe', 0);
       } 
     }
   },
-  getters: { // hämtar data och visa data
+  getters: { 
     todos(state) {
       return state.dataToChild;
     },

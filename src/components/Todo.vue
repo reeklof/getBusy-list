@@ -1,6 +1,6 @@
 <template>
-    <article class="todo" :class="{completed:todo.done}" v-touch:swipe="completed">
-        <aside class="done">
+    <article class="todo" :class="{completed : todo.done }" v-touch:swipe="completed">
+        <aside class="done" v-if="todo.done">
             <img src="../assets/Vector.png" alt="done">
         </aside>
         <section class="text">
