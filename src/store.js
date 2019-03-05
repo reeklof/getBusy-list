@@ -25,6 +25,9 @@ export default new Vuex.Store({
         ctx.commit('addTodo', todo);
         ctx.commit('swipe', 0);
       } 
+    }, 
+    updateTodo(ctx, index) {
+      ctx.commit ('updateTodo', index);
     }
   },
   getters: { 
