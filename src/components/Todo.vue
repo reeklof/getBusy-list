@@ -1,7 +1,7 @@
 <template>
     <article class="todo" :class="{completed:todo.done}" v-touch:swipe="completed">
         <aside class="done">
-            <img src="../assets/cheeck.svg" alt="done">
+            <img src="../assets/Vector.png" alt="done">
         </aside>
         <section class="text">
             {{todo.text}}

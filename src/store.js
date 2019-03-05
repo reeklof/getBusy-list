@@ -19,19 +19,19 @@ export default new Vuex.Store({
       state.activeSlide = index;
     }
   },
-  actions: {
+  actions: { // hanterar större mängd data
     newTodo(ctx, todo) {
       if (todo.text != ''){
         ctx.commit('addTodo', todo)
       } 
     }
   },
-  getters: {
+  getters: { // hämtar data och visa data
     todos(state) {
       return state.dataToChild;
     },
     finishTodos(state) {
-      return state.dataToChild.filter(todo=>todo.done);
+      return state.dataToChild.filter(todo=>todo.done == true);
     }
   }
 })
